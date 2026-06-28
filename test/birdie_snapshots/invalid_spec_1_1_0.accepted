@@ -1,0 +1,39 @@
+---
+version: 2.0.1
+title: invalid/spec-1.1.0
+---
+common-16-0.toml
+  2:1 (offset 62) multiple values [str5]
+  2:46 (offset 107) bad value: .
+  3:11 (offset 133) bad value: Here
+  3:16 (offset 138) bad value: are
+  3:20 (offset 142) bad value: three
+  3:26 (offset 148) bad value: quotation
+  3:36 (offset 158) bad value: marks:
+  3:45 (offset 167) bad value: \
+
+common-19-0.toml
+  3:1 (offset 66) multiple values [apos15]
+  4:56 (offset 193) unterminated string
+
+common-2.toml
+  1:1 (offset 0) missing value [key]
+
+common-46-0.toml
+  5:1 (offset 54) duplicate table (originally at 2:1) [fruit.apple]
+
+common-46-1.toml
+  6:1 (offset 81) duplicate table (originally at 3:1) [fruit.apple.taste]
+
+common-49-0.toml
+  3:1 (offset 35) key is inline table: type (originally at 2:1) [product]
+
+common-5.toml
+  1:1 (offset 0) invalid key syntax
+  1:1 (offset 0) invalid key syntax
+  2:1 (offset 36) invalid key syntax
+  2:1 (offset 36) invalid key syntax
+  4:1 (offset 122) duplicate key:  (originally at 3:1)
+
+common-50-0.toml
+  3:1 (offset 29) duplicate key: type (originally at 2:1) [product]

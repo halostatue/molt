@@ -1,0 +1,4 @@
+[tools]
+erlang = "28"
+gleam = "1.17"
+node = "24"

@@ -1,0 +1,219 @@
+---
+version: 2.0.1
+title: invalid/table
+---
+append-with-dotted-keys-01.toml
+  17:1 (offset 393) duplicate table (originally at 13:1) [a.b]
+  17:1 (offset 393) duplicate table (originally at 13:1) [a.b.c]
+
+append-with-dotted-keys-02.toml
+  8:1 (offset 158) duplicate table (originally at 4:1) [a.b]
+  8:1 (offset 158) duplicate table (originally at 4:1) [a.b.c]
+  8:1 (offset 158) duplicate table (originally at 4:1) [a.b.c.d]
+
+append-with-dotted-keys-03.toml
+  4:1 (offset 13) duplicate table (originally at 1:1) [a.b]
+
+append-with-dotted-keys-04.toml
+  7:1 (offset 66) duplicate table (originally at 4:1) [dependencies]
+
+append-with-dotted-keys-05.toml
+  2:1 (offset 10) duplicate key: b (originally at 1:1)
+
+append-with-dotted-keys-06.toml
+  2:1 (offset 6) key is scalar: a (originally at 1:1)
+
+append-with-dotted-keys-07.toml
+  1:14 (offset 13) invalid key syntax [a.k1.name]
+
+append-with-dotted-keys-08.toml
+  8:1 (offset 50) duplicate table (originally at 1:1) [a.b]
+  8:1 (offset 50) duplicate table (originally at 1:1) [a.b.c]
+
+array-empty.toml
+  1:1 (offset 0) empty table header
+
+array-implicit.toml
+  13:1 (offset 586) duplicate table (originally at 10:1) [albums]
+
+array-no-close-01.toml
+  1:1 (offset 0) malformed table header [albums]
+
+array-no-close-02.toml
+  1:1 (offset 0) malformed table header [closing-bracket.missing]
+
+array-no-close-03.toml
+  1:1 (offset 0) malformed table header [a]
+
+array-no-close-04.toml
+  1:1 (offset 0) malformed table header [a]
+
+bare-invalid-character-01.toml
+  1:1 (offset 0) malformed table header [!]
+
+bare-invalid-character-02.toml
+  1:1 (offset 0) malformed table header [bare!key]
+
+dot.toml
+  1:1 (offset 0) empty table header
+
+dotdot.toml
+  1:1 (offset 0) empty table header
+
+duplicate-key-01.toml
+  4:1 (offset 11) duplicate table (originally at 1:1) [a]
+
+duplicate-key-02.toml
+  4:1 (offset 24) duplicate table (originally at 2:1) [fruit.type]
+
+duplicate-key-03.toml
+  4:1 (offset 29) duplicate table (originally at 2:1) [fruit.apple]
+
+duplicate-key-04.toml
+  4:1 (offset 29) duplicate table (originally at 2:1) [fruit.apple]
+
+duplicate-key-05.toml
+  4:1 (offset 34) duplicate table (originally at 2:1) [fruit.apple.taste]
+
+duplicate-key-06.toml
+  2:1 (offset 6) duplicate table (originally at 1:1) [tbl]
+
+duplicate-key-07.toml
+  2:1 (offset 8) duplicate table (originally at 1:1) [tbl]
+
+duplicate-key-08.toml
+  3:1 (offset 26) duplicate table (originally at 2:1) [a.b]
+
+duplicate-key-09.toml
+  5:1 (offset 30) duplicate table (originally at 1:1) [a]
+
+duplicate-key-10.toml
+  2:1 (offset 7) key is array: a (originally at 1:1)
+
+empty-implicit-table.toml
+  1:1 (offset 0) malformed table header [naughty.naughty]
+
+empty.toml
+  1:1 (offset 0) empty table header
+
+equals-sign.toml
+  1:1 (offset 0) malformed table header [name.bad]
+
+llbrace.toml
+  1:1 (offset 0) malformed table header [table]
+
+multiline-key-01.toml
+  1:1 (offset 0) empty table header
+
+multiline-key-02.toml
+  1:1 (offset 0) empty table header
+
+nested-brackets-close.toml
+  1:1 (offset 0) malformed table header [a.b]
+
+nested-brackets-open.toml
+  1:1 (offset 0) malformed table header [a.b]
+
+newline-01.toml
+  1:1 (offset 0) malformed table header [tbl]
+  2:1 (offset 5) unparsable content [tbl]
+  2:1 (offset 5) invalid key syntax [tbl]
+  2:1 (offset 5) missing value [tbl]
+
+newline-02.toml
+  1:1 (offset 0) empty table header
+  1:2 (offset 1) unterminated string
+  2:1 (offset 6) unparsable content
+  2:1 (offset 6) invalid key syntax
+  2:1 (offset 6) missing value
+  2:1 (offset 6) unterminated string
+
+newline-03.toml
+  1:1 (offset 0) malformed table header [tbl]
+  2:1 (offset 7) unparsable content [tbl]
+  2:1 (offset 7) invalid key syntax [tbl]
+  2:1 (offset 7) missing value [tbl]
+
+newline-04.toml
+  1:1 (offset 0) malformed table header [tbl]
+  2:1 (offset 6) unparsable content [tbl]
+  2:1 (offset 6) invalid key syntax [tbl]
+  2:1 (offset 6) missing value [tbl]
+
+newline-05.toml
+  1:1 (offset 0) malformed table header [tbl]
+  2:1 (offset 5) unparsable content [tbl]
+  2:1 (offset 5) invalid key syntax [tbl.sub]
+  2:1 (offset 5) missing value [tbl.sub]
+
+no-close-01.toml
+  1:1 (offset 0) malformed table header [where.will.it.end]
+  2:8 (offset 26) bad value: value
+
+no-close-02.toml
+  1:1 (offset 0) malformed table header [closing-bracket.missingö]
+
+no-close-03.toml
+  1:1 (offset 0) empty table header
+  1:2 (offset 1) unterminated string
+  2:8 (offset 28) bad value: value
+
+no-close-04.toml
+  1:1 (offset 0) empty table header
+
+no-close-05.toml
+  1:1 (offset 0) malformed table header [fwfw.wafw]
+
+no-close-06.toml
+  1:1 (offset 0) malformed table header [a]
+  3:1 (offset 7) malformed table header [c]
+
+no-close-07.toml
+  1:1 (offset 0) empty table header
+  1:2 (offset 1) unterminated string
+
+no-close-08.toml
+  1:1 (offset 0) empty table header
+  1:2 (offset 1) unterminated multiline string
+
+no-close-09.toml
+  1:1 (offset 0) malformed table header [where will it end]
+  1:21 (offset 20) unterminated string
+  2:8 (offset 30) bad value: value
+
+overwrite-array-in-parent.toml
+  4:1 (offset 48) duplicate key: arr (originally at 1:1) [parent-table]
+
+overwrite-bool-with-array.toml
+  2:1 (offset 7) duplicate table (originally at 1:1) [a]
+
+overwrite-with-deep-table.toml
+  2:1 (offset 4) key is scalar: a (originally at 1:1)
+
+redefine-01.toml
+  5:1 (offset 66) duplicate table (originally at 3:1) [a.b]
+
+redefine-02.toml
+  3:1 (offset 17) duplicate table (originally at 2:1) [t1.t2]
+
+redefine-03.toml
+  3:1 (offset 17) duplicate table (originally at 2:1) [t1.t2.t3]
+
+rrbrace.toml
+  1:1 (offset 0) malformed table header [table]
+
+super-twice.toml
+  3:1 (offset 10) duplicate table (originally at 2:1) [a]
+
+text-after-table.toml
+  1:1 (offset 0) malformed table header [error.this.shouldn]
+  1:21 (offset 20) unterminated string
+
+trailing-dot.toml
+  1:1 (offset 0) malformed table header [a]
+
+whitespace.toml
+  1:1 (offset 0) malformed table header [invalid.key]
+
+with-pound.toml
+  1:1 (offset 0) malformed table header [key]

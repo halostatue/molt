@@ -1,0 +1,112 @@
+---
+version: 2.0.1
+title: invalid/datetime
+---
+day-zero.toml
+  1:7 (offset 6) bad value: 1997-09-00T09:09:09.09Z
+
+feb-29.toml
+  1:21 (offset 20) bad value: 2100-02-29T15:15:15Z
+
+feb-30.toml
+  1:36 (offset 35) bad value: 1988-02-30T15:15:15Z
+
+hour-over.toml
+  2:5 (offset 40) bad value: 2006-01-01T24:00:00-00:00
+
+mday-over.toml
+  3:5 (offset 111) bad value: 2006-01-32T00:00:00-00:00
+
+mday-under.toml
+  3:5 (offset 111) bad value: 2006-01-00T00:00:00-00:00
+
+minute-over.toml
+  2:5 (offset 40) bad value: 2006-01-01T00:60:00-00:00
+
+month-over.toml
+  2:5 (offset 40) bad value: 2006-13-01T00:00:00-00:00
+
+month-under.toml
+  2:5 (offset 40) bad value: 2007-00-01T00:00:00-00:00
+
+no-date-time-sep.toml
+  1:7 (offset 6) bad value: 1997-09-0909:09:09
+
+no-leads-month.toml
+  2:12 (offset 70) bad value: 1987-7-05T17:45:00Z
+
+no-leads-with-milli.toml
+  2:14 (offset 70) bad value: 1987-07-5T17:45:00.12Z
+
+no-leads.toml
+  2:12 (offset 70) bad value: 1987-7-05T17:45:00Z
+
+no-secs.toml
+  (no errors detected)
+
+no-t.toml
+  2:8 (offset 50) bad value: 1987-07-0517:45:00Z
+
+no-year-month-sep.toml
+  1:7 (offset 6) bad value: 199709-09
+
+offset-minus-minute-1digit.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+09:9
+
+offset-minus-no-hour-minute-sep.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+0909
+
+offset-minus-no-hour-minute.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+
+
+offset-minus-no-minute.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+09
+
+offset-overflow-hour.toml
+  2:1 (offset 21) multiple values [d]
+  2:16 (offset 36) bad value: 17:04:07+25:00
+
+offset-overflow-minute.toml
+  1:1 (offset 0) multiple values [d]
+  1:16 (offset 15) bad value: 17:04:07+12:60
+
+offset-plus-minute-1digit.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+09:9
+
+offset-plus-no-hour-minute-sep.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+0909
+
+offset-plus-no-hour-minute.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+
+
+offset-plus-no-minute.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.09+09
+
+only-T.toml
+  1:7 (offset 6) bad value: T
+
+only-TZ.toml
+  1:7 (offset 6) bad value: TZ
+
+only-Tdot.toml
+  1:7 (offset 6) bad value: T.
+
+second-over.toml
+  3:5 (offset 111) bad value: 2006-01-01T00:00:61-00:00
+
+second-trailing-dot.toml
+  1:7 (offset 6) bad value: 1997-09-09T09:09:09.
+
+second-trailing-dotz.toml
+  1:7 (offset 6) bad value: 2016-09-09T09:09:09.Z
+
+time-no-leads.toml
+  2:5 (offset 36) bad value: 2023-10-01T1:32:00Z
+
+trailing-x.toml
+  1:6 (offset 5) bad value: 2020-01-01x
+
+y10k.toml
+  2:1 (offset 32) multiple values [d]
+  2:5 (offset 36) bad value: 10000-01-01
+  2:17 (offset 48) bad value: 00:00:00z

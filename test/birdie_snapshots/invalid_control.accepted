@@ -1,0 +1,105 @@
+---
+version: 2.0.1
+title: invalid/control
+---
+bare-cr.toml
+  (rejected at parse level)
+
+bare-formfeed.toml
+  (rejected at parse level)
+
+bare-null.toml
+  (rejected at parse level)
+
+bare-vertical-tab.toml
+  (rejected at parse level)
+
+comment-cr.toml
+  (rejected at parse level)
+
+comment-del.toml
+  (rejected at parse level)
+
+comment-ff.toml
+  (rejected at parse level)
+
+comment-lf.toml
+  (rejected at parse level)
+
+comment-null.toml
+  (rejected at parse level)
+
+comment-us.toml
+  (rejected at parse level)
+
+multi-cr.toml
+  (rejected at parse level)
+
+multi-del.toml
+  (rejected at parse level)
+
+multi-lf.toml
+  (rejected at parse level)
+
+multi-null.toml
+  (rejected at parse level)
+
+multi-us.toml
+  (rejected at parse level)
+
+only-ff.toml
+  (rejected at parse level)
+
+only-null.toml
+  (rejected at parse level)
+
+only-vt.toml
+  (rejected at parse level)
+
+rawmulti-cr.toml
+  (rejected at parse level)
+
+rawmulti-del.toml
+  (rejected at parse level)
+
+rawmulti-lf.toml
+  (rejected at parse level)
+
+rawmulti-null.toml
+  (rejected at parse level)
+
+rawmulti-us.toml
+  (rejected at parse level)
+
+rawstring-cr.toml
+  (rejected at parse level)
+
+rawstring-del.toml
+  (rejected at parse level)
+
+rawstring-lf.toml
+  (rejected at parse level)
+
+rawstring-null.toml
+  (rejected at parse level)
+
+rawstring-us.toml
+  (rejected at parse level)
+
+string-bs.toml
+  (rejected at parse level)
+
+string-cr.toml
+  (rejected at parse level)
+
+string-del.toml
+  (rejected at parse level)
+
+string-lf.toml
+  (rejected at parse level)
+
+string-null.toml
+  (rejected at parse level)
+
+string-us.toml
+  (rejected at parse level)

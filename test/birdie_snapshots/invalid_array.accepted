@@ -1,0 +1,89 @@
+---
+version: 2.0.1
+title: invalid/array
+---
+double-comma-01.toml
+  1:19 (offset 18) misplaced array separator [double-comma-01]
+
+double-comma-02.toml
+  1:19 (offset 18) misplaced array separator [double-comma-02]
+
+extend-defined-aot.toml
+  3:1 (offset 18) duplicate table (originally at 1:1) [tab.arr]
+
+extending-table.toml
+  5:1 (offset 108) key is array: a (originally at 1:1)
+
+missing-separator-01.toml
+  1:8 (offset 7) misplaced array separator [arrr]
+
+missing-separator-02.toml
+  1:9 (offset 8) misplaced array separator [wrong]
+
+no-close-01.toml
+  1:15 (offset 14) unterminated array [no-close-01]
+
+no-close-02.toml
+  1:15 (offset 14) unterminated array [no-close-02]
+
+no-close-03.toml
+  1:15 (offset 14) unterminated array [no-close-03]
+
+no-close-04.toml
+  1:15 (offset 14) unterminated array [no-close-04]
+  1:16 (offset 15) unterminated inline table [no-close-04]
+
+no-close-05.toml
+  1:15 (offset 14) unterminated array [no-close-05]
+
+no-close-06.toml
+  1:15 (offset 14) unterminated array [no-close-06]
+  1:16 (offset 15) unterminated inline table [no-close-06]
+
+no-close-07.toml
+  1:15 (offset 14) unterminated array [no-close-07]
+
+no-close-08.toml
+  1:15 (offset 14) unterminated array [no-close-08]
+
+no-close-table-01.toml
+  1:5 (offset 4) unterminated array [x]
+  1:6 (offset 5) unterminated inline table [x]
+
+no-close-table-02.toml
+  1:5 (offset 4) unterminated array [x]
+  1:6 (offset 5) unterminated inline table [x]
+
+no-comma-01.toml
+  1:15 (offset 14) misplaced array separator [no-comma-01]
+
+no-comma-02.toml
+  1:15 (offset 14) misplaced array separator [no-comma-02]
+
+no-comma-03.toml
+  1:15 (offset 14) unterminated array [no-comma-03]
+
+only-comma-01.toml
+  1:17 (offset 16) misplaced array separator [only-comma-01]
+
+only-comma-02.toml
+  1:17 (offset 16) misplaced array separator [only-comma-02]
+
+tables-01.toml
+  4:1 (offset 31) duplicate table (originally at 2:1) [fruit]
+
+tables-02.toml
+  9:1 (offset 144) duplicate table (originally at 5:1) [fruit.0.variety]
+
+text-after-array-entries.toml
+  2:46 (offset 55) bad value: No
+
+text-before-array-separator.toml
+  1:9 (offset 8) misplaced array separator [array]
+  2:46 (offset 55) bad value: No
+
+text-in-array.toml
+  1:9 (offset 8) misplaced array separator [array]
+  3:3 (offset 25) bad value: I
+  3:5 (offset 27) bad value: don
+  3:8 (offset 30) unterminated string

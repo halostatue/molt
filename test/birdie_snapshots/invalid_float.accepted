@@ -1,0 +1,132 @@
+---
+version: 2.0.1
+title: invalid/float
+---
+double-dot-01.toml
+  1:17 (offset 16) bad value: 0..1
+
+double-dot-02.toml
+  1:17 (offset 16) bad value: 0.1.2
+
+exp-dot-01.toml
+  1:14 (offset 13) bad value: 1e2.3
+
+exp-dot-02.toml
+  1:14 (offset 13) bad value: 1.e2
+
+exp-dot-03.toml
+  1:14 (offset 13) bad value: 3.e+20
+
+exp-double-e-01.toml
+  1:19 (offset 18) bad value: 1ee2
+
+exp-double-e-02.toml
+  1:19 (offset 18) bad value: 1e2e3
+
+exp-double-us.toml
+  1:17 (offset 16) bad value: 1e__23
+
+exp-leading-us.toml
+  1:18 (offset 17) bad value: 1e_23
+
+exp-trailing-us-01.toml
+  1:22 (offset 21) bad value: 1_e2
+
+exp-trailing-us-02.toml
+  1:22 (offset 21) bad value: 1.2_e2
+
+exp-trailing-us.toml
+  1:19 (offset 18) bad value: 1e23_
+
+inf-capital.toml
+  1:5 (offset 4) bad value: Inf
+
+inf-incomplete-01.toml
+  1:21 (offset 20) bad value: in
+
+inf-incomplete-02.toml
+  1:21 (offset 20) bad value: +in
+
+inf-incomplete-03.toml
+  1:21 (offset 20) bad value: -in
+
+inf_underscore.toml
+  1:18 (offset 17) bad value: in_f
+
+leading-dot-neg.toml
+  1:19 (offset 18) bad value: -.12345
+
+leading-dot-plus.toml
+  1:20 (offset 19) bad value: +.12345
+
+leading-dot.toml
+  1:15 (offset 14) bad value: .12345
+
+leading-us.toml
+  1:14 (offset 13) bad value: _1.2
+
+leading-zero-neg.toml
+  1:20 (offset 19) bad value: -03.14
+
+leading-zero-plus.toml
+  1:21 (offset 20) bad value: +03.14
+
+leading-zero.toml
+  1:16 (offset 15) bad value: 03.14
+
+nan-capital.toml
+  1:5 (offset 4) bad value: NaN
+
+nan-incomplete-01.toml
+  1:21 (offset 20) bad value: na
+
+nan-incomplete-02.toml
+  1:21 (offset 20) bad value: +na
+
+nan-incomplete-03.toml
+  1:21 (offset 20) bad value: -na
+
+nan_underscore.toml
+  1:18 (offset 17) bad value: na_n
+
+trailing-dot-01.toml
+  1:18 (offset 17) bad value: 1.
+
+trailing-dot-02.toml
+  1:5 (offset 4) bad value: 1.
+
+trailing-dot-min.toml
+  1:20 (offset 19) bad value: -1.
+
+trailing-dot-plus.toml
+  1:21 (offset 20) bad value: +1.
+
+trailing-dot.toml
+  1:16 (offset 15) bad value: 1.
+
+trailing-exp-dot.toml
+  1:21 (offset 20) bad value: 0.e
+
+trailing-exp-minus.toml
+  1:22 (offset 21) bad value: 0.0e-
+
+trailing-exp-plus.toml
+  1:21 (offset 20) bad value: 0.0e+
+
+trailing-exp.toml
+  1:16 (offset 15) bad value: 0.0E
+
+trailing-us-exp-01.toml
+  1:21 (offset 20) bad value: 1_e2
+
+trailing-us-exp-02.toml
+  1:21 (offset 20) bad value: 1.2_e2
+
+trailing-us.toml
+  1:15 (offset 14) bad value: 1.2_
+
+us-after-dot.toml
+  1:16 (offset 15) bad value: 1._2
+
+us-before-dot.toml
+  1:17 (offset 16) bad value: 1_.2

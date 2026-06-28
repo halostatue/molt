@@ -1,0 +1,49 @@
+---
+version: 2.0.1
+title: invalid/local-datetime
+---
+feb-29.toml
+  1:21 (offset 20) bad value: 2100-02-29T15:15:15
+
+feb-30.toml
+  1:36 (offset 35) bad value: 1988-02-30T15:15:15
+
+hour-over.toml
+  2:5 (offset 40) bad value: 2006-01-01T24:00:00
+
+mday-over.toml
+  3:5 (offset 111) bad value: 2006-01-32T00:00:00
+
+mday-under.toml
+  3:5 (offset 111) bad value: 2006-01-00T00:00:00
+
+minute-over.toml
+  2:5 (offset 40) bad value: 2006-01-01T00:60:00
+
+month-over.toml
+  2:5 (offset 40) bad value: 2006-13-01T00:00:00
+
+month-under.toml
+  2:5 (offset 40) bad value: 2007-00-01T00:00:00
+
+no-leads-with-milli.toml
+  2:14 (offset 70) bad value: 1987-07-5T17:45:00.12
+
+no-leads.toml
+  2:12 (offset 70) bad value: 1987-7-05T17:45:00
+
+no-secs.toml
+  (no errors detected)
+
+no-t.toml
+  2:8 (offset 50) bad value: 1987-07-0517:45:00
+
+second-over.toml
+  3:5 (offset 111) bad value: 2006-01-01T00:00:61
+
+time-no-leads.toml
+  2:5 (offset 36) bad value: 2023-10-01T1:32:00Z
+
+y10k.toml
+  2:1 (offset 32) multiple values [d]
+  2:5 (offset 36) bad value: 10000-01-01

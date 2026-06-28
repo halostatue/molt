@@ -1,0 +1,273 @@
+name: Gleam Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-beam:
+    name: Gleam ${{ matrix.gleam }} OTP ${{ matrix.otp }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        gleam:
+          - '1.14'
+          - '1.15'
+          - '1.16'
+          - '1.17'
+        otp:
+          - 27
+          - 28
+          - 29
+        include:
+          - gleam: '1.17'
+            otp: 28
+            quality: true
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            builds.hex.pm:443
+            github.com:443
+            hex.pm:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+            release-assets.githubusercontent.com:443
+            repo.hex.pm:443
+
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: erlef/setup-beam@fc68ffb90438ef2936bbb3251622353b3dcb2f93 # v1.24.0
+        id: beam
+        with:
+          otp-version: ${{ matrix.otp }}
+          gleam-version: ${{ matrix.gleam }}
+          rebar3-version: "3"
+
+      - uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          key: builds@gleam-${{ steps.beam.outputs.gleam-version }}-otp-${{ steps.beam.outputs.otp-version }}-hash-${{ hashFiles('**/manifest.toml') }}
+          path: |
+            **/build
+
+      - run: gleam deps download
+      - run: gleam build --warnings-as-errors
+      - run: gleam test --target erlang
+
+      - name: Format check
+        if: matrix.quality
+        run: gleam format --check src test
+
+      - name: Lint
+        if: matrix.quality
+        run: gleam run -m glinter
+
+  test-bun:
+    name: Gleam ${{ matrix.gleam }} OTP ${{ matrix.otp }} / Bun ${{ matrix.bun }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        gleam:
+          - '1.14'
+          - '1.15'
+          - '1.16'
+          - '1.17'
+        otp:
+          - 28
+        bun:
+          - latest
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            builds.hex.pm:443
+            github.com:443
+            hex.pm:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+            release-assets.githubusercontent.com:443
+            repo.hex.pm:443
+
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: erlef/setup-beam@fc68ffb90438ef2936bbb3251622353b3dcb2f93 # v1.24.0
+        id: beam
+        with:
+          otp-version: ${{ matrix.otp }}
+          gleam-version: ${{ matrix.gleam }}
+          rebar3-version: "3"
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        id: bun
+        with:
+          bun-version: ${{ matrix.bun }}
+
+      - uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          key: builds@gleam-${{ steps.beam.outputs.gleam-version }}-otp-${{ steps.beam.outputs.otp-version }}-bun-${{ steps.bun.outputs.bun-version }}-hash-${{ hashFiles('**/manifest.toml') }}
+          path: |
+            **/build
+
+      - run: gleam deps download
+      - run: gleam test --target javascript --runtime bun
+
+  test-deno:
+    name: Gleam ${{ matrix.gleam }} OTP ${{ matrix.otp }} / Deno ${{ matrix.deno }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        gleam:
+          - '1.14'
+          - '1.15'
+          - '1.16'
+          - '1.17'
+        otp:
+          - 28
+        deno:
+          - v2.x
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            builds.hex.pm:443
+            deno.com:443
+            github.com:443
+            hex.pm:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+            release-assets.githubusercontent.com:443
+            repo.hex.pm:443
+
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: erlef/setup-beam@fc68ffb90438ef2936bbb3251622353b3dcb2f93 # v1.24.0
+        id: beam
+        with:
+          otp-version: ${{ matrix.otp }}
+          gleam-version: ${{ matrix.gleam }}
+          rebar3-version: "3"
+
+      - uses: denoland/setup-deno@667a34cdef165d8d2b2e98dde39547c9daac7282 # v2.0.4
+        id: deno
+        with:
+          deno-version: ${{ matrix.deno }}
+
+      - uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          key: builds@gleam-${{ steps.beam.outputs.gleam-version }}-otp-${{ steps.beam.outputs.otp-version }}-deno-${{ steps.deno.outputs.deno-version }}-hash-${{ hashFiles('**/manifest.toml') }}
+          path: |
+            **/build
+
+      - run: gleam deps download
+      - run: gleam test --target javascript --runtime deno
+
+  test-node:
+    name: Gleam ${{ matrix.gleam }} OTP ${{ matrix.otp }} / Node ${{ matrix.node }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        gleam:
+          - '1.14'
+          - '1.15'
+          - '1.16'
+          - '1.17'
+        otp:
+          - 28
+        node:
+          - 24.x
+          - 26.x
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            builds.hex.pm:443
+            github.com:443
+            hex.pm:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+            release-assets.githubusercontent.com:443
+            repo.hex.pm:443
+
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: erlef/setup-beam@fc68ffb90438ef2936bbb3251622353b3dcb2f93 # v1.24.0
+        id: beam
+        with:
+          otp-version: ${{ matrix.otp }}
+          gleam-version: ${{ matrix.gleam }}
+          rebar3-version: "3"
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        id: node
+        with:
+          node-version: ${{ matrix.node }}
+
+      - uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          key: builds@gleam-${{ steps.beam.outputs.gleam-version }}-otp-${{ steps.beam.outputs.otp-version }}-node-${{ steps.node.outputs.node-version }}-hash-${{ hashFiles('**/manifest.toml') }}
+          path: |
+            **/build
+
+      - run: gleam deps download
+      - run: gleam test --target javascript --runtime node

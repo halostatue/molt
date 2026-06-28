@@ -1,0 +1,16 @@
+---
+version: 2.0.1
+title: downgrade/inline-table/newline-comment
+---
+# Identical to newline.toml, but with comments that shouldn't affect the
+# results.
+
+trailing-comma-1 = { c = 1 }#comment
+trailing-comma-2 = { c = 1, }#comment
+
+tbl-1 = { hello = "world", 1 = 2, arr = [1, 2, 3, ], tbl = { k = 1 } }#comment
+
+tbl-2 = { k = """
+	Hello
+	""" }#comment
+

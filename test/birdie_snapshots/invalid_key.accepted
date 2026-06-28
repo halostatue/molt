@@ -1,0 +1,233 @@
+---
+version: 2.0.1
+title: invalid/key
+---
+after-array.toml
+  1:1 (offset 0) malformed table header [agencies.owner.S Cjelli]
+
+after-table.toml
+  1:1 (offset 0) malformed table header [error.this.should not be here]
+
+after-value.toml
+  1:1 (offset 0) extra equals sign [first]
+  1:1 (offset 0) multiple values [first]
+  1:15 (offset 14) bad value: last
+
+bare-invalid-character-01.toml
+  1:1 (offset 0) no valid toml structure
+
+bare-invalid-character-02.toml
+  1:1 (offset 0) no valid toml structure
+
+dot.toml
+  1:1 (offset 0) invalid key syntax
+
+dotdot.toml
+  1:1 (offset 0) invalid key syntax
+
+dotted-redefine-table-01.toml
+  2:1 (offset 10) key is scalar: a (originally at 1:1)
+
+dotted-redefine-table-02.toml
+  4:1 (offset 66) key is scalar: b (originally at 2:1) [a]
+
+duplicate-keys-01.toml
+  2:1 (offset 13) duplicate key: name (originally at 1:1)
+
+duplicate-keys-02.toml
+  2:1 (offset 13) duplicate key: dupe (originally at 1:1)
+
+duplicate-keys-03.toml
+  2:1 (offset 24) duplicate key: spelling (originally at 1:1)
+
+duplicate-keys-04.toml
+  2:1 (offset 24) duplicate key: spelling (originally at 1:1)
+
+duplicate-keys-05.toml
+  2:1 (offset 13) duplicate key: a (originally at 1:1)
+
+duplicate-keys-06.toml
+  2:1 (offset 15) duplicate key: a'b (originally at 1:1)
+
+duplicate-keys-07.toml
+  2:1 (offset 7) duplicate key:  (originally at 1:1)
+
+duplicate-keys-08.toml
+  2:1 (offset 10) duplicate key: arr (originally at 1:1)
+
+duplicate-keys-09.toml
+  2:1 (offset 12) duplicate key: tbl (originally at 1:1)
+
+empty.toml
+  1:1 (offset 0) invalid key syntax
+  1:1 (offset 0) invalid key syntax
+
+end-in-escape.toml
+  1:1 (offset 0) no valid toml structure
+
+escape.toml
+  1:1 (offset 0) no valid toml structure
+
+hash.toml
+  1:1 (offset 0) no valid toml structure
+
+multiline-key-01.toml
+  1:1 (offset 0) invalid key syntax
+  1:1 (offset 0) invalid key syntax
+
+multiline-key-02.toml
+  1:1 (offset 0) invalid key syntax
+  1:1 (offset 0) invalid key syntax
+
+multiline-key-03.toml
+  1:1 (offset 0) invalid key syntax
+  1:1 (offset 0) invalid key syntax
+
+multiline-key-04.toml
+  1:1 (offset 0) invalid key syntax
+  1:1 (offset 0) invalid key syntax
+
+newline-01.toml
+  1:1 (offset 0) unparsable content
+  1:1 (offset 0) invalid key syntax [barekey]
+  1:1 (offset 0) missing value [barekey]
+  2:1 (offset 8) invalid key syntax
+  2:1 (offset 8) invalid key syntax
+
+newline-02.toml
+  1:1 (offset 0) no valid toml structure
+
+newline-03.toml
+  1:1 (offset 0) no valid toml structure
+
+newline-04.toml
+  1:1 (offset 0) no valid toml structure
+
+newline-05.toml
+  1:1 (offset 0) no valid toml structure
+
+newline-06.toml
+  1:1 (offset 0) no valid toml structure
+
+no-eol-01.toml
+  1:1 (offset 0) extra equals sign [a]
+  1:1 (offset 0) multiple values [a]
+  1:7 (offset 6) bad value: b
+
+no-eol-02.toml
+  1:1 (offset 0) extra equals sign [0]
+  1:1 (offset 0) multiple values [0]
+  1:3 (offset 2) bad value: 0r
+
+no-eol-03.toml
+  1:1 (offset 0) extra equals sign [0]
+  1:1 (offset 0) multiple values [0]
+  1:5 (offset 4) bad value: o
+  1:9 (offset 8) bad value: m
+  1:13 (offset 12) bad value: r
+  1:17 (offset 16) bad value: 00
+  1:23 (offset 22) bad value: q
+  1:32 (offset 31) bad value: e
+
+no-eol-04.toml
+  2:1 (offset 11) multiple values [0000l0.-1.0]
+  2:8 (offset 18) bad value: 0000l0
+  3:1 (offset 27) duplicate key: 0 (originally at 2:1) [0000l0.-1]
+  3:1 (offset 27) multiple values [0000l0.-1.0]
+  3:8 (offset 34) bad value: 0000l0
+  4:1 (offset 43) duplicate key: 0 (originally at 3:1) [0000l0.-1]
+  4:1 (offset 43) extra equals sign [0000l0.-1.0]
+  4:1 (offset 43) multiple values [0000l0.-1.0]
+  4:6 (offset 48) bad value: l
+
+no-eol-05.toml
+  1:1 (offset 0) extra equals sign [0]
+  1:1 (offset 0) multiple values [0]
+  1:6 (offset 5) bad value: 00
+  1:16 (offset 15) bad value: t
+  1:31 (offset 30) bad value: s
+  1:34 (offset 33) bad value: 1000-00-00T00:00:00Z
+  1:55 (offset 54) bad value: 2000-00-00T00:00:00Z
+
+no-eol-06.toml
+  1:1 (offset 0) extra equals sign [0]
+  1:1 (offset 0) multiple values [0]
+  1:3 (offset 2) bad value: 0r0
+  1:7 (offset 6) bad value: 0r
+
+no-eol-07.toml
+  1:1 (offset 0) extra equals sign [0]
+  1:1 (offset 0) multiple values [0]
+  1:3 (offset 2) bad value: 0r0
+  1:7 (offset 6) bad value: 0r
+  1:10 (offset 9) bad value: falsefal
+
+only-float.toml
+  1:1 (offset 0) no valid toml structure
+
+only-int.toml
+  1:1 (offset 0) no valid toml structure
+
+only-str.toml
+  1:1 (offset 0) no valid toml structure
+
+open-bracket.toml
+  1:1 (offset 0) malformed table header [abc.1]
+
+partial-quoted.toml
+  1:1 (offset 0) invalid key syntax [partial]
+
+quoted-unclosed-01.toml
+  1:1 (offset 0) no valid toml structure
+
+quoted-unclosed-02.toml
+  1:1 (offset 0) no valid toml structure
+
+single-open-bracket.toml
+  1:1 (offset 0) empty table header
+
+space.toml
+  1:1 (offset 0) invalid key syntax [a]
+
+special-character.toml
+  1:1 (offset 0) no valid toml structure
+
+start-bracket.toml
+  2:1 (offset 4) malformed table header [xyz.5]
+
+start-dot.toml
+  1:1 (offset 0) invalid key syntax [key]
+
+two-equals-01.toml
+  1:1 (offset 0) extra equals sign [key]
+  1:1 (offset 0) multiple values [key]
+
+two-equals-02.toml
+  1:1 (offset 0) extra equals sign [a]
+  1:1 (offset 0) multiple values [a]
+
+two-equals-03.toml
+  1:1 (offset 0) extra equals sign [a]
+  1:1 (offset 0) multiple values [a]
+  1:3 (offset 2) bad value: b
+
+without-value-01.toml
+  1:1 (offset 0) no valid toml structure
+
+without-value-02.toml
+  1:1 (offset 0) no valid toml structure
+
+without-value-03.toml
+  1:1 (offset 0) no valid toml structure
+
+without-value-04.toml
+  1:1 (offset 0) no valid toml structure
+
+without-value-05.toml
+  1:1 (offset 0) no valid toml structure
+
+without-value-06.toml
+  1:1 (offset 0) no valid toml structure
+
+without-value-07.toml
+  1:1 (offset 0) no valid toml structure

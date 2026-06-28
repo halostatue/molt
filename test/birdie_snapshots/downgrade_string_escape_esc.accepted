@@ -1,0 +1,6 @@
+---
+version: 2.0.1
+title: downgrade/string/escape-esc
+---
+esc = "\u001B There is no escape! \u001B"
+

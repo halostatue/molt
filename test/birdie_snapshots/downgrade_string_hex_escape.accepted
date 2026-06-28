@@ -1,0 +1,26 @@
+---
+version: 2.0.1
+title: downgrade/string/hex-escape
+---
+# \x for the first 255 codepoints
+
+whitespace      = "\u0020 \u0009 \u001b \u000d\u000a"
+bs              = "\u007f"
+nul             = "\u0000"
+hello           = "\u0068\u0065\u006c\u006c\u006f\u000a"
+higher-than-127 = "S\u00f8rmirb\u00e6ren"
+
+multiline = """
+\u0020 \u0009 \u001b \u000d\u000a
+\u007f
+\u0000
+\u0068\u0065\u006c\u006c\u006f\u000a
+\u0053\u00F8\u0072\u006D\u0069\u0072\u0062\u00E6\u0072\u0065\u006E
+"""
+
+# Not inside literals.
+literal = '\x20 \x09 \x0d\x0a'
+multiline-literal = '''
+\x20 \x09 \x0d\x0a
+'''
+

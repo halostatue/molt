@@ -1,0 +1,27 @@
+---
+version: 2.0.1
+title: invalid/local-time
+---
+hour-over.toml
+  2:5 (offset 40) bad value: 24:00:00
+
+minute-over.toml
+  2:5 (offset 40) bad value: 00:60:00
+
+no-secs.toml
+  (no errors detected)
+
+second-over.toml
+  3:5 (offset 111) bad value: 00:00:61
+
+time-no-leads-01.toml
+  2:5 (offset 36) bad value: 1:32:00
+
+time-no-leads-02.toml
+  2:5 (offset 36) bad value: 01:32:0
+
+trailing-dot.toml
+  1:5 (offset 4) bad value: 12:13:14.
+
+trailing-dotdot.toml
+  1:5 (offset 4) bad value: 12:13:14..

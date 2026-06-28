@@ -1,0 +1,274 @@
+---
+version: 2.0.1
+title: invalid/string
+---
+bad-byte-escape.toml
+  1:11 (offset 10) bad value: "\xAg"
+
+bad-concat.toml
+  1:1 (offset 0) multiple values [no_concat]
+
+bad-escape-01.toml
+  1:18 (offset 17) bad value: "This string has a bad \a escape charact...
+
+bad-escape-02.toml
+  1:18 (offset 17) bad value: "This string has a bad \  escape charact...
+
+bad-escape-03.toml
+  1:13 (offset 12) unterminated string
+
+bad-escape-04.toml
+  1:5 (offset 4) bad value: "a \\\ b"
+
+bad-escape-05.toml
+  1:5 (offset 4) bad value: "a \\\\\ b"
+
+bad-hex-esc-01.toml
+  1:18 (offset 17) bad value: "\x0g"
+
+bad-hex-esc-02.toml
+  1:18 (offset 17) bad value: "\xG0"
+
+bad-hex-esc-03.toml
+  1:18 (offset 17) bad value: "\x"
+
+bad-hex-esc-04.toml
+  1:18 (offset 17) bad value: "\x 50"
+
+bad-hex-esc-05.toml
+  1:17 (offset 16) bad value: "\x 50"
+
+bad-multiline.toml
+  1:9 (offset 8) unterminated string
+  2:1 (offset 20) unparsable content
+  2:1 (offset 20) invalid key syntax [second]
+  2:1 (offset 20) missing value [second]
+  2:12 (offset 31) unterminated string
+
+bad-slash-escape.toml
+  1:18 (offset 17) bad value: "This string has a bad \/ escape charact...
+
+bad-uni-esc-01.toml
+  1:18 (offset 17) bad value: "val\ue"
+
+bad-uni-esc-02.toml
+  1:18 (offset 17) bad value: "val\Ux"
+
+bad-uni-esc-03.toml
+  1:18 (offset 17) bad value: "val\U0000000"
+
+bad-uni-esc-04.toml
+  1:18 (offset 17) bad value: "val\U0000"
+
+bad-uni-esc-05.toml
+  1:18 (offset 17) bad value: "val\Ugggggggg"
+
+bad-uni-esc-06.toml
+  1:18 (offset 17) bad value: "This string contains a non scalar unico...
+
+bad-uni-esc-07.toml
+  1:18 (offset 17) bad value: "\uabag"
+
+bad-uni-esc-ml-01.toml
+  1:21 (offset 20) bad value: val\ue"""
+
+bad-uni-esc-ml-02.toml
+  1:21 (offset 20) bad value: val\Ux"""
+
+bad-uni-esc-ml-03.toml
+  1:21 (offset 20) bad value: val\U0000000"""
+
+bad-uni-esc-ml-04.toml
+  1:21 (offset 20) bad value: val\U0000"""
+
+bad-uni-esc-ml-05.toml
+  1:21 (offset 20) bad value: val\Ugggggggg"""
+
+bad-uni-esc-ml-06.toml
+  1:21 (offset 20) bad value: This string contains a non scalar unicod...
+
+bad-uni-esc-ml-07.toml
+  1:21 (offset 20) bad value: \uabag"""
+
+basic-byte-escapes.toml
+  (no errors detected)
+
+basic-multiline-out-of-range-unicode-escape-01.toml
+  1:5 (offset 4) bad value: \UFFFFFFFF"""
+
+basic-multiline-out-of-range-unicode-escape-02.toml
+  1:5 (offset 4) bad value: \U00D80000"""
+
+basic-multiline-quotes.toml
+  1:1 (offset 0) multiple values [str5]
+  1:46 (offset 45) bad value: .
+  1:47 (offset 46) unterminated multiline string
+
+basic-multiline-unknown-escape.toml
+  1:5 (offset 4) bad value: \@"""
+
+basic-out-of-range-unicode-escape-01.toml
+  1:5 (offset 4) bad value: "\UFFFFFFFF"
+
+basic-out-of-range-unicode-escape-02.toml
+  1:5 (offset 4) bad value: "\U00D80000"
+
+basic-unknown-escape.toml
+  1:5 (offset 4) bad value: "\@"
+
+literal-multiline-quotes-01.toml
+  1:1 (offset 0) multiple values [a]
+  1:26 (offset 25) unterminated multiline string
+
+literal-multiline-quotes-02.toml
+  1:1 (offset 0) multiple values [a]
+  1:39 (offset 38) unterminated multiline string
+
+missing-quotes-array.toml
+  1:9 (offset 8) bad value: value
+
+missing-quotes-inline-table.toml
+  1:16 (offset 15) bad value: value
+
+missing-quotes.toml
+  1:8 (offset 7) bad value: value
+
+multiline-bad-escape-01.toml
+  1:5 (offset 4) bad value: t\a"""
+
+multiline-bad-escape-02.toml
+  2:5 (offset 38) bad value: t\ t"""
+
+multiline-bad-escape-03.toml
+  2:5 (offset 38) bad value: t\ """
+
+multiline-bad-escape-04.toml
+  1:13 (offset 12) unterminated multiline string
+
+multiline-escape-space-01.toml
+  1:5 (offset 4) bad value:   foo \ \n
+
+multiline-escape-space-02.toml
+  1:7 (offset 6) bad value: hee \
+
+gee \   """
+
+multiline-lit-no-close-01.toml
+  1:11 (offset 10) unterminated multiline string
+
+multiline-lit-no-close-02.toml
+  1:3 (offset 2) unterminated multiline string
+
+multiline-lit-no-close-03.toml
+  1:13 (offset 12) unterminated multiline string
+
+multiline-lit-no-close-04.toml
+  1:7 (offset 6) unterminated multiline string
+
+multiline-no-close-01.toml
+  1:11 (offset 10) unterminated multiline string
+
+multiline-no-close-02.toml
+  1:3 (offset 2) unterminated multiline string
+
+multiline-no-close-03.toml
+  1:13 (offset 12) unterminated multiline string
+
+multiline-no-close-04.toml
+  1:7 (offset 6) unterminated multiline string
+
+multiline-no-close-05.toml
+  1:7 (offset 6) unterminated multiline string
+
+multiline-quotes-01.toml
+  1:1 (offset 0) multiple values [a]
+  1:21 (offset 20) unterminated multiline string
+
+no-close-01.toml
+  1:19 (offset 18) unterminated string
+
+no-close-02.toml
+  1:22 (offset 21) unterminated string
+
+no-close-03.toml
+  1:19 (offset 18) unterminated string
+
+no-close-04.toml
+  1:22 (offset 21) unterminated string
+
+no-close-05.toml
+  2:19 (offset 38) unterminated string
+
+no-close-06.toml
+  2:22 (offset 41) unterminated string
+
+no-close-07.toml
+  2:19 (offset 38) unterminated string
+
+no-close-08.toml
+  2:22 (offset 41) unterminated string
+
+no-close-09.toml
+  2:5 (offset 45) unterminated string
+  3:1 (offset 47) unparsable content
+  3:1 (offset 47) invalid key syntax
+  3:1 (offset 47) missing value
+  3:1 (offset 47) unterminated string
+
+no-close-10.toml
+  2:5 (offset 45) unterminated string
+  3:1 (offset 47) unparsable content
+  3:1 (offset 47) invalid key syntax
+  3:1 (offset 47) missing value
+  3:1 (offset 47) unterminated string
+
+no-open-01.toml
+  1:1 (offset 0) multiple values [s]
+  1:5 (offset 4) bad value: a
+  1:6 (offset 5) unterminated string
+
+no-open-02.toml
+  1:5 (offset 4) unterminated array [a]
+  1:5 (offset 4) misplaced array separator [a]
+  1:6 (offset 5) bad value: a
+  1:7 (offset 6) unterminated string
+
+no-open-03.toml
+  1:1 (offset 0) multiple values [s]
+  1:5 (offset 4) bad value: a
+  1:6 (offset 5) unterminated string
+
+no-open-04.toml
+  1:5 (offset 4) unterminated array [a]
+  1:5 (offset 4) misplaced array separator [a]
+  1:6 (offset 5) bad value: a
+  1:7 (offset 6) unterminated string
+
+no-open-05.toml
+  1:1 (offset 0) multiple values [a]
+  1:5 (offset 4) bad value: a
+  1:6 (offset 5) unterminated multiline string
+
+no-open-06.toml
+  1:5 (offset 4) unterminated array [a]
+  1:5 (offset 4) misplaced array separator [a]
+  1:6 (offset 5) bad value: a
+  1:7 (offset 6) unterminated multiline string
+
+no-open-07.toml
+  1:1 (offset 0) multiple values [a]
+  1:5 (offset 4) bad value: a
+  1:6 (offset 5) unterminated multiline string
+
+no-open-08.toml
+  1:5 (offset 4) unterminated array [a]
+  1:5 (offset 4) misplaced array separator [a]
+  1:6 (offset 5) bad value: a
+  1:7 (offset 6) unterminated multiline string
+
+text-after-string.toml
+  1:1 (offset 0) multiple values [string]
+  1:41 (offset 40) bad value: No.
+
+wrong-close.toml
+  1:20 (offset 19) unterminated string

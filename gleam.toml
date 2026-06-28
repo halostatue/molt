@@ -1,0 +1,82 @@
+name = "molt"
+version = "1.0.0"
+description = "TOML transformed"
+licences = ["Apache-2.0"]
+gleam = ">= 1.14.0"
+
+[repository]
+type = "github"
+user = "halostatue"
+repo = "molt"
+
+[[documentation.pages]]
+title = "Usage Guide"
+path = "usage.html"
+source = "guides/usage.md"
+[[documentation.pages]]
+title = "Operations Reference"
+path = "operations.html"
+source = "guides/operations.md"
+[[documentation.pages]]
+title = "Repairing Invalid TOML"
+path = "invalid-toml.html"
+source = "guides/repair.md"
+[[documentation.pages]]
+title = "Changelog"
+path = "changelog.html"
+source = "CHANGELOG.md"
+
+[[links]]
+title = "TOML 1.1 Spec"
+href = "https://toml.io/en/v1.1.0"
+[[links]]
+title = "TOML 1.0 Spec"
+href = "https://toml.io/en/v1.0.0"
+[[links]]
+title = "Licence"
+href = "https://github.com/halostatue/molt/blob/main/LICENCE.md"
+[[links]]
+title = "Security"
+href = "https://github.com/halostatue/molt/blob/main/SECURITY.md"
+[[links]]
+title = "Code of Conduct"
+href = "https://github.com/halostatue/molt/blob/main/CODE_OF_CONDUCT.md"
+[[links]]
+title = "Contributing"
+href = "https://github.com/halostatue/molt/blob/main/CONTRIBUTING.md"
+[[links]]
+title = "Sponsor"
+href = "https://github.com/sponsors/halostatue"
+
+[dependencies]
+gleam_stdlib = ">= 0.44.0 and < 2.0.0"
+splitter = ">= 1.2.0 and < 2.0.0"
+casefold = ">= 2.1.0 and < 3.0.0"
+greenwood = ">= 1.0.0 and < 2.0.0"
+
+[dev-dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
+glinter = ">= 2.15.0 and < 3.0.0"
+gleamy_bench = ">= 0.6.0 and < 1.0.0"
+birdie = ">= 2.0.0 and < 3.0.0"
+metamon = ">= 0.8.0 and < 1.0.0"
+simplifile = ">= 2.4.0 and < 3.0.0"
+argv = ">= 1.1.0 and < 2.0.0"
+tom = ">= 2.1.0 and < 3.0.0"
+
+[tools.glinter]
+stats = true
+
+[tools.glinter.rules]
+ffi_usage = "warning"
+function_complexity = "warning"
+module_complexity = "warning"
+
+[tools.glinter.ignore]
+"src/molt/internal/validate.gleam" = ["module_complexity"]
+"src/molt/value.gleam" = ["module_complexity"]
+
+[javascript.deno]
+allow_read = true
+allow_write = true
+allow_env = ["TMPDIR", "TEMP", "TMP"]

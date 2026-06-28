@@ -1,0 +1,9 @@
+[default]
+
+[default.extend-identifiers]
+
+[default.extend-words]
+"flase" = "flase"
+
+[files]
+extend-exclude = ["test/toml-fixtures/**", "test/birdie_snapshots/**"]

@@ -1,0 +1,39 @@
+---
+version: 2.0.1
+title: invalid/local-date
+---
+day-1digit.toml
+  1:7 (offset 6) bad value: 1997-09-9
+
+feb-29.toml
+  1:21 (offset 20) bad value: 2100-02-29
+
+feb-30.toml
+  1:36 (offset 35) bad value: 1988-02-30
+
+mday-over.toml
+  3:5 (offset 111) bad value: 2006-01-32
+
+mday-under.toml
+  3:5 (offset 111) bad value: 2006-01-00
+
+month-over.toml
+  2:5 (offset 40) bad value: 2006-13-01
+
+month-under.toml
+  2:5 (offset 40) bad value: 2007-00-01
+
+no-leads-with-milli.toml
+  2:14 (offset 70) bad value: 1987-07-5
+
+no-leads.toml
+  2:12 (offset 70) bad value: 1987-7-05
+
+trailing-t.toml
+  2:5 (offset 38) bad value: 2006-01-30T
+
+y10k.toml
+  2:5 (offset 36) bad value: 10000-01-01
+
+year-3digits.toml
+  1:7 (offset 6) bad value: 199-09-09

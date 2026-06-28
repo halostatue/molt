@@ -1,0 +1,105 @@
+---
+version: 2.0.1
+title: invalid/inline-table
+---
+bad-key-syntax.toml
+  1:16 (offset 15) invalid key syntax [tbl]
+  1:16 (offset 15) missing value [tbl]
+  1:17 (offset 16) bad value: b
+
+double-comma.toml
+  1:10 (offset 9) invalid key syntax [t]
+  1:10 (offset 9) missing value [t]
+
+duplicate-key-01.toml
+  2:3 (offset 54) duplicate key in inline table: b [a]
+
+duplicate-key-02.toml
+  1:10 (offset 9) duplicate key in inline table: table2.dupe [table1]
+  1:12 (offset 11) invalid key syntax [table1.table2.dupe]
+  1:29 (offset 28) invalid key syntax [table1.table2.dupe]
+
+duplicate-key-03.toml
+  1:19 (offset 18) invalid key syntax [tbl.fruit.apple.color]
+  1:42 (offset 41) invalid key syntax [tbl.fruit.apple.texture]
+
+duplicate-key-04.toml
+  1:9 (offset 8) invalid key syntax [tbl.a.b]
+  1:22 (offset 21) invalid key syntax [tbl.a.b.c]
+
+empty-01.toml
+  1:6 (offset 5) invalid key syntax [t]
+  1:6 (offset 5) missing value [t]
+
+empty-02.toml
+  1:6 (offset 5) invalid key syntax [t]
+  1:6 (offset 5) missing value [t]
+
+empty-03.toml
+  2:1 (offset 6) invalid key syntax [t]
+  2:1 (offset 6) missing value [t]
+
+linebreak-01.toml
+  (no errors detected)
+
+linebreak-02.toml
+  (no errors detected)
+
+linebreak-03.toml
+  2:1 (offset 9) invalid key syntax [t]
+  2:1 (offset 9) missing value [t]
+
+linebreak-04.toml
+  (no errors detected)
+
+no-close-01.toml
+  1:3 (offset 2) unterminated inline table [a]
+
+no-close-02.toml
+  1:3 (offset 2) unterminated inline table [a]
+
+no-comma-01.toml
+  1:6 (offset 5) extra equals sign [t.x]
+  1:6 (offset 5) multiple values [t.x]
+  1:12 (offset 11) bad value: y
+
+no-comma-02.toml
+  1:10 (offset 9) extra equals sign [arrr.comma-missing]
+  1:10 (offset 9) multiple values [arrr.comma-missing]
+  1:31 (offset 30) bad value: valid-toml
+
+overwrite-01.toml
+  3:1 (offset 85) duplicate key: a (originally at 1:1)
+
+overwrite-02.toml
+  3:1 (offset 57) key is inline table: a (originally at 1:1)
+
+overwrite-03.toml
+  2:1 (offset 14) key is inline table: a (originally at 1:1)
+
+overwrite-04.toml
+  3:1 (offset 26) key is inline table: inline-t (originally at 1:1)
+
+overwrite-05.toml
+  3:1 (offset 26) key is inline table: inline-t (originally at 1:1)
+
+overwrite-06.toml
+  1:14 (offset 13) invalid key syntax [a.b.c]
+
+overwrite-07.toml
+  1:9 (offset 8) invalid key syntax [tab.inner.table]
+  1:29 (offset 28) invalid key syntax [tab.inner.table.val]
+
+overwrite-08.toml
+  1:35 (offset 34) invalid key syntax [tab.inner.cat]
+
+overwrite-09.toml
+  5:1 (offset 45) duplicate table (originally at 1:1) [tab.nested]
+  5:1 (offset 45) key is inline table: inline-t (originally at 2:1) [tab.nested]
+
+overwrite-10.toml
+  4:6 (offset 145) invalid key syntax [a.b.a]
+  4:22 (offset 161) invalid key syntax [a.b.c]
+
+trailing-comma.toml
+  (no errors detected)

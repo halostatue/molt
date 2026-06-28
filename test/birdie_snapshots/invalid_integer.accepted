@@ -1,0 +1,120 @@
+---
+version: 2.0.1
+title: invalid/integer
+---
+capital-bin.toml
+  1:15 (offset 14) bad value: 0B0
+
+capital-hex.toml
+  1:15 (offset 14) bad value: 0X1
+
+capital-oct.toml
+  1:15 (offset 14) bad value: 0O0
+
+double-sign-nex.toml
+  1:19 (offset 18) bad value: --99
+
+double-sign-plus.toml
+  1:20 (offset 19) bad value: ++99
+
+double-us.toml
+  1:13 (offset 12) bad value: 1__23
+
+incomplete-bin.toml
+  1:18 (offset 17) bad value: 0b
+
+incomplete-hex.toml
+  1:18 (offset 17) bad value: 0x
+
+incomplete-oct.toml
+  1:18 (offset 17) bad value: 0o
+
+invalid-bin.toml
+  1:15 (offset 14) bad value: 0b0012
+
+invalid-hex-01.toml
+  1:18 (offset 17) bad value: 0xaafz
+
+invalid-hex-02.toml
+  1:18 (offset 17) bad value: 0xgabba00f1
+
+invalid-hex-03.toml
+  1:5 (offset 4) bad value: 0x-1
+
+invalid-oct.toml
+  1:15 (offset 14) bad value: 0o778
+
+leading-us-bin.toml
+  1:18 (offset 17) bad value: _0b1
+
+leading-us-hex.toml
+  1:18 (offset 17) bad value: _0x1
+
+leading-us-oct.toml
+  1:18 (offset 17) bad value: _0o1
+
+leading-us.toml
+  1:14 (offset 13) bad value: _123
+
+leading-zero-01.toml
+  1:19 (offset 18) bad value: 01
+
+leading-zero-02.toml
+  1:19 (offset 18) bad value: 00
+
+leading-zero-03.toml
+  1:19 (offset 18) bad value: 0_0
+
+leading-zero-sign-01.toml
+  1:24 (offset 23) bad value: -01
+
+leading-zero-sign-02.toml
+  1:24 (offset 23) bad value: +01
+
+leading-zero-sign-03.toml
+  1:24 (offset 23) bad value: +0_1
+
+negative-bin.toml
+  1:16 (offset 15) bad value: -0b11010110
+
+negative-hex.toml
+  1:16 (offset 15) bad value: -0xff
+
+negative-oct.toml
+  1:16 (offset 15) bad value: -0o755
+
+positive-bin.toml
+  1:16 (offset 15) bad value: +0b11010110
+
+positive-hex.toml
+  1:16 (offset 15) bad value: +0xff
+
+positive-oct.toml
+  1:16 (offset 15) bad value: +0o755
+
+text-after-integer.toml
+  1:1 (offset 0) multiple values [answer]
+  1:13 (offset 12) bad value: the
+  1:17 (offset 16) bad value: ultimate
+  1:26 (offset 25) bad value: answer?
+
+trailing-us-bin.toml
+  1:19 (offset 18) bad value: 0b1_
+
+trailing-us-hex.toml
+  1:19 (offset 18) bad value: 0x1_
+
+trailing-us-oct.toml
+  1:19 (offset 18) bad value: 0o1_
+
+trailing-us.toml
+  1:15 (offset 14) bad value: 123_
+
+us-after-bin.toml
+  1:16 (offset 15) bad value: 0b_1
+
+us-after-hex.toml
+  1:16 (offset 15) bad value: 0x_1
+
+us-after-oct.toml
+  1:16 (offset 15) bad value: 0o_1

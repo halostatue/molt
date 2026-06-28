@@ -1,0 +1,51 @@
+---
+version: 2.0.1
+title: invalid/bool
+---
+almost-false-with-extra.toml
+  1:27 (offset 26) bad value: falsify
+
+almost-false.toml
+  1:27 (offset 26) bad value: fals
+
+almost-true-with-extra.toml
+  1:27 (offset 26) bad value: truthy
+
+almost-true.toml
+  1:27 (offset 26) bad value: tru
+
+capitalized-false.toml
+  1:28 (offset 27) bad value: False
+
+capitalized-true.toml
+  1:28 (offset 27) bad value: True
+
+just-f.toml
+  1:27 (offset 26) bad value: f
+
+just-t.toml
+  1:27 (offset 26) bad value: t
+
+mixed-case-false.toml
+  1:27 (offset 26) bad value: falsE
+
+mixed-case-true.toml
+  1:27 (offset 26) bad value: trUe
+
+mixed-case.toml
+  1:1 (offset 0) extra equals sign [mixed-case]
+  1:1 (offset 0) multiple values [mixed-case]
+  1:27 (offset 26) bad value: valid
+  1:37 (offset 36) bad value: False
+
+starting-same-false.toml
+  1:27 (offset 26) bad value: falsey
+
+starting-same-true.toml
+  1:27 (offset 26) bad value: truer
+
+wrong-case-false.toml
+  1:27 (offset 26) bad value: FALSE
+
+wrong-case-true.toml
+  1:27 (offset 26) bad value: TRUE
